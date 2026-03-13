@@ -115,3 +115,22 @@ function lsp_keybindings(event, client)
     map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
   end
 end
+
+function git_keybindings()
+  local gitsigns = require 'gitsigns'
+  local map = function(keys, func, desc, mode)
+    mode = mode or 'n'
+    vim.keymap.set(mode, keys, func, { desc = 'Git: ' .. desc })
+  end
+  map('<leader>gb', gitsigns.blame, '[B]lame')
+
+  map('<leader>gd', gitsigns.diffthis, '[D]iff')
+
+  map('<leader>gh', gitsigns.preview_hunk, '[H]unk')
+
+  map('<leader>gj', function() gitsigns.nav_hunk 'next' end, 'Next Hunk')
+
+  map('<leader>gk', function() gitsigns.nav_hunk 'prev' end, 'Previous Hunk')
+
+  map('<leader>gr', gitsigns.reset_hunk, '[R]eset hunk')
+end
