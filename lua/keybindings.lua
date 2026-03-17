@@ -126,7 +126,7 @@ function git_keybindings()
 
   map('<leader>gd', gitsigns.diffthis, '[D]iff')
 
-  map('<leader>gh', gitsigns.preview_hunk, '[H]unk')
+  map('<leader>gh', gitsigns.preview_hunk_inline, '[H]unk')
 
   map('<leader>gj', function() gitsigns.nav_hunk 'next' end, 'Next Hunk')
 

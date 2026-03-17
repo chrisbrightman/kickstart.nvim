@@ -149,7 +149,7 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         --clang_format = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         rust_analyzer = {},
         --
@@ -249,6 +249,7 @@ require('lazy').setup({
         c = { 'clang-format' },
         h = { 'clang-format' },
         rs = { 'rustfmt' },
+        go = { 'gofmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
